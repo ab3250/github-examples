@@ -1,5 +1,5 @@
-(define (handler request request-body)
-  (values response response-body))
+;(define (handler request request-body)
+;  (values response response-body))
 
 (define (request-path-components request)
   (split-and-decode-uri-path (uri-path (request-uri request))))
@@ -106,5 +106,5 @@
 (hash-set! *mime-types* "png" '("image" . "png"))
 (hash-set! *mime-types* "jpg" '("image" . "jpeg"))
 (hash-set! *mime-types* "jpeg" '("image" . "jpeg"))
-(hash-set! *mime-types* "ico" '("image" . "jpeg"))
+(hash-set! *mime-types* "xxx" '("text" . ""))
 ;;;;

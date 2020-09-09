@@ -2,7 +2,9 @@
 !#
 (use-modules
   (artanis artanis)
-  (sxml simple))
+  (sxml simple)
+  (ice-9 popen)
+  (ice-9 q))
 
 (init-server) 
 
