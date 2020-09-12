@@ -7,18 +7,14 @@
   (sxml simple)
   (web http)
   (web server)
-  (web request)
-  (web response)
   (web uri)
   (ice-9 rdelim)
   (rnrs bytevectors)
-  (ice-9 binary-ports)
-  (artanis mime))
+  (ice-9 binary-ports))
 
 (include "ab-library.scm" )
 
 (define (page-handler request body)
-(display (mime-guess "txt"))
   (cond
     ((string-rindex (car (request-path-components request)) #\.) ;if has ext
      (static-page request body))      
