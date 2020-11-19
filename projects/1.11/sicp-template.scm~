@@ -1,0 +1,21 @@
+;(load "../../lib/list.sld")
+(load "../../lib/srfi-197-2.scm")
+(define lst (list 3 5 6 7 0 4 6 0 2 3))
+(sort '(3 5 6 7 0 4 6 2 3) >)
+(reverse lst)
+(filter zero? lst)
+(number? 6)
+
+(define (listwalk L)
+  (newline)
+  (if (eq? L '()) '() 
+      (begin 
+        (display (car L))
+        (newline)
+        (listwalk (cdr L)))))
+(listwalk (list 3 4 5 7 8 0 1))
+
+(define s (chain-lambda          
+          (filter zero?)))
+(define d (s '(3 5 6 7 0 4 6 2 3)))
+(display d)

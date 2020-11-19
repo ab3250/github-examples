@@ -1,0 +1,17 @@
+#lang r7rs
+ (import (scheme base)
+         (scheme write)
+         (srfi 46))
+(syntax-rules for-times
+  (lambda (iterate state . body)
+    (let ((iterator (first iterate))
+          (iterations (second iterate))
+          (name (first state))
+          (value (second state)))
+      `(let loop ((,iterator 0)
+                  (,name ,value))
+         (if (< ,iterator ,iterations)
+             (loop (+ ,iterator 1) (begin ,@body))
+             ,name)))))
+
+(iterate 10 (lambda(x)(display x)))

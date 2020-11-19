@@ -1,0 +1,12 @@
+#lang r5rs
+(#%require r5rs/init)
+(#%require "../lib/32.rkt")
+(#%require "../lib/42.rkt")
+(define a (delay (display(+ 3 4))))
+;(write a)
+;(write (force a))
+(write a)(newline)
+(force a)(newline)
+(write a)(newline)
+(force a)(newline)
+(write a)(newline)
